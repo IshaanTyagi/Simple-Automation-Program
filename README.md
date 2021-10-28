@@ -6,3 +6,8 @@ First type in terminal pip install openpyxl.
 ----> link {" https://pypi.org/project/openpyxl/ "}
 
 This repo also contains an example automation program.
+
+---
+
+transactions.xlsx is the file we want to automate.
+transactionstext.xlsx is the file we get after automating it.

@@ -1,6 +1,6 @@
 import openpyxl as xl
 
-from openpyxl.chart import BarChart, Reference
+from openpyxl.chart import BarChart, Reference, PieChart
 
 
 def process_workbook(filename, filename2):
@@ -17,16 +17,20 @@ def process_workbook(filename, filename2):
         corrected_price_cell.value = corrected_price
 
     values = Reference(sheet,
-              min_row = 2,
-              max_row = sheet.max_row,
-              min_col = 4,
-              max_col = 4)
+                       min_row=2,
+                       max_row=sheet.max_row,
+                       min_col=4,
+                       max_col=4)
 
     chart = BarChart()
     chart.add_data(values)
     sheet.add_chart(chart, 'e2')
 
+    chart2 = PieChart()
+    chart2.add_data(values)
+    sheet.add_chart(chart2, 'e20')
+    
     workbook.save(filename2)
 
 
-process_workbook("transactions.xlsx", "transactions.xlsx")
+process_workbook('transactions.xlsx', 'transcationsPie.xlsx')

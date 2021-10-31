@@ -22,15 +22,15 @@ def process_workbook(filename, filename2):
                        min_col=4,
                        max_col=4)
 
-    chart = BarChart()
-    chart.add_data(values)
-    sheet.add_chart(chart, 'e2')
+    # chart = BarChart()
+    # chart.add_data(values)
+    # sheet.add_chart(chart, 'e2')
 
-    chart2 = PieChart()
-    chart2.add_data(values)
-    sheet.add_chart(chart2, 'e20')
-    
+    chartPie = PieChart()
+    chartPie.add_data(values)
+    sheet.add_chart(chartPie, 'e3')
+    #
     workbook.save(filename2)
 
 
-process_workbook('transactions.xlsx', 'transcationsPie.xlsx')
+process_workbook('transactions.xlsx', 'transcationsPieResult.xlsx')
